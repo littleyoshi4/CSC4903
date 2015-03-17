@@ -1,0 +1,12 @@
+****COMMENT****
+06:25:21
+Resource metadata loaded.
+****************
+****COMMENT****
+06:25:21
+Scripts parsed successfully.
+****************
+****COMMENT****
+06:25:21
+Meshes loaded successfully.
+****************

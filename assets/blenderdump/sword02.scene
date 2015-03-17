@@ -1,0 +1,60 @@
+<scene exported_by="daniel" formatVersion="1.0.1" previous_export_time="1424209610.928155" export_time="1424209776.322773" >
+  <nodes >
+    <node name="hilt_front" >
+      <position y="0.102245" x="-4.183801" z="-0.125546" />
+      <rotation qy="0.306188" qx="-0.004668" qz="0.951954" qw="0.003278" />
+      <scale y="1.000103" x="1.285277" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="hilt_front.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="hilt_front" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+    </node>
+    <node name="hilt_back" >
+      <position y="-0.167365" x="4.098969" z="-0.233967" />
+      <rotation qy="-0.001647" qx="-0.001661" qz="-0.001642" qw="0.999996" />
+      <scale y="0.844043" x="1.261798" z="1.350470" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="hilt_back.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="hilt_back" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+    </node>
+    <node name="blade" >
+      <position y="0.000000" x="0.000000" z="-2.756016" />
+      <rotation qy="0.000000" qx="0.000000" qz="0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="blade.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="blade" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+    </node>
+    <node name="handle" >
+      <position y="0.000000" x="0.000000" z="4.542979" />
+      <rotation qy="0.000000" qx="0.000000" qz="0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="handle.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="handle" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+    </node>
+    <node name="center" >
+      <position y="0.010429" x="0.007694" z="-0.115904" />
+      <rotation qy="0.000000" qx="0.000000" qz="0.000000" qw="1.000000" />
+      <scale y="2.002348" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="center.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="center" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+    </node>
+  </nodes>
+  <externals />
+  <environment >
+    <colourBackground r="0.05087608844041824" b="0.05087608844041824" g="0.05087608844041824" />
+    <colourAmbient r="0.0" b="0.0" g="0.0" />
+    <colourDiffuse r="0.05087608844041824" b="0.05087608844041824" g="0.05087608844041824" />
+  </environment>
+</scene>
