@@ -21,7 +21,7 @@ Under Public:
 
 In RenderManager.cpp:
    Just copy all the definitions of the functions that you copied from RenderManager.h
-   void RenderManager::updateCamera() is where all the magic happens, feel free to re-map the inputs to do whatevery you want
+   void RenderManager::updateCamera() is where all the magic happens, feel free to re-map the inputs to do whatever you want
 
 In InputManager.cpp:
    I modified joystickButtonMap(int button) to include BACK, START, HOME, left stick click and right stick click.
