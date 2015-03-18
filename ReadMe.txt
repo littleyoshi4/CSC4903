@@ -1,5 +1,13 @@
 #######
 What you need to implement constant control-stick input:
+Required files:
+RenderManager.h
+RenderManager.cpp
+InputManager.h
+InputManager.cpp
+GameManager.h
+GameManager.cpp
+
 In RenderManager.h:
 
 Under Private:
