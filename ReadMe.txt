@@ -50,6 +50,6 @@ Controls:
 	Mouse: Also moves the camera around.
 
 Issues:
-If this doesn't run, you'll probably have to change line 488 of RenderManager.cpp to the correct plugin for your system. 
+If this doesn't run, you'll probably have to change line 490 of RenderManager.cpp to the correct plugin for your system. 
 Also the MakeFile was changed to match my system setup, you'll have to change it to match yours. 
 There are several issues in the dungeon spawnRooms function which I will try to work out any issues with in the next few days. 
