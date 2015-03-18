@@ -23,7 +23,7 @@ void RenderManager::buildDungeon(Ogre::SceneNode* root_scene_node, int roomCount
     if (roomCount < 1) roomCount = 1; //Incase invalid number is entered guaruntees that at least one room will be created.
     spawnRooms(dungeon,roomCount);
     
-    dungeon->translate(Vector3(-10,0,-10), Node::TS_LOCAL);
+    dungeon->translate(Vector3(0,0,0), Node::TS_LOCAL); //Doesn't do anything just
 }
 
 //This is the function which actually spawns in rooms for the map. This is still being worked on and will probably end up re-writing the whole thing in the future, but it does work to a degree.
@@ -33,24 +33,24 @@ void RenderManager::spawnRooms(Ogre::SceneNode* dungeonNode, int totalRoomCount)
     int dimentions[3] = {15,10,15};
     std::vector<std::vector<int> > map;
 
-    for (int i = 0; i<totalRoomCount; i++)
+    for (int i = 0; i<totalRoomCount+2; i++)
     {
 	std::vector<int> temp;
 
-	for (int j = 0; j<totalRoomCount; j++)
+	for (int j = 0; j<totalRoomCount+2; j++)
 	{
 	    temp.push_back(0); //Fill the map initially with 0s
 	}
 	map.push_back(temp);
     }
-    map[totalRoomCount/2][totalRoomCount/2] = 15;//Spawn room
+    map[(totalRoomCount/2)+1][(totalRoomCount/2)+1] = 15;//Spawn room
     int roomCount = totalRoomCount-1;
     int unspawnedRooms = 0;
     while (roomCount>0)
     {
-	for (int i=1;i<totalRoomCount-1;i++)
+	for (int i=1;i<totalRoomCount;i++)
 	{
-	    for (int j=1;j<totalRoomCount-1;j++)
+	    for (int j=1;j<totalRoomCount;j++)
 	    {
 		int neededDoors = 0;
 		bool walls[4] = {true,true,true,true};
@@ -109,14 +109,14 @@ void RenderManager::spawnRooms(Ogre::SceneNode* dungeonNode, int totalRoomCount)
 		}
 		map[i][j] = neededDoors;
 	    }
-	    cout << "Rooms spawned: " << totalRoomCount-roomCount << "/" << totalRoomCount << endl;
+	    cout << "Spawing room:  " << totalRoomCount-roomCount << " of " << totalRoomCount << endl;
 	}
     }
-//an attempt at smoothing out the rooms
 
-    for (int i=1;i<totalRoomCount-1;i++)
+//an attempt at smoothing out the rooms
+    for (int i=1;i<totalRoomCount;i++)
     {
-	for (int j=1;j<totalRoomCount-1;j++)
+	for (int j=1;j<totalRoomCount;j++)
 	{
 	    if (map[i][j-1]==0 && map[i][j]%2) 
 	    {
@@ -137,9 +137,9 @@ void RenderManager::spawnRooms(Ogre::SceneNode* dungeonNode, int totalRoomCount)
 	}
     }
 
-    for (int i = 0; i<totalRoomCount;i++)
+    for (int i = 0; i<totalRoomCount+2;i++)
     {
-	for (int j = 0; j<totalRoomCount;j++) 
+	for (int j = 0; j<totalRoomCount+2;j++) 
 	{
 	    if(map[i][j]>0)
 	    {
@@ -667,7 +667,7 @@ void RenderManager::buildSceneFromXML(std::string file_name)
 
       if (scene_node)
       {
-	  buildDungeon(scene_manager->getRootSceneNode(),3); //Comment out this line to remove the "dungeon" spawn, or change the second argument to something else for a different dungeon size. 
+	  buildDungeon(scene_manager->getRootSceneNode(),18); //Comment out this line to remove the "dungeon" spawn, or change the second argument to something else for a different dungeon size. 
          float values[4];
 
          TiXmlNode* camera_node = scene_node->FirstChild("camera");
