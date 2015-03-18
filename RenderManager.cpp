@@ -311,7 +311,7 @@ void RenderManager::joystickAxisMoved(double amount[])
 void RenderManager::updateCamera()
 {
     Camera* camera = scene_manager->getCamera("Camera");
-    const Quaternion& current_quat = camera->getOrientation();
+    const Quaternion& current_quat = camera->getOrientation(); //Unused
     const Vector3& current_pos = camera->getPosition();
     const Vector3& current_dir = camera->getDirection();
 
@@ -320,6 +320,9 @@ void RenderManager::updateCamera()
     Vector3 z_axis(0, 0, 1); 
 
     double sticks[6];
+    //It should be noted that most axis inputs range between ~-32720 and ~32720
+    //Control stick axis tend to equal +-~500 when they are idle (as in not beig touched)
+    //Triggers start at one extreme and end at the other as they are pulled down.
     for (int i=0;i<6;i++)
     {
 	if (abs(controllerStickInput[i]) < 10000) controllerStickInput[i]=0;
@@ -346,7 +349,6 @@ void RenderManager::updateCamera()
 }
 
 void RenderManager::updateCamera(double amount[])
-{
     setControlStickInput(amount);
     updateCamera();
 }

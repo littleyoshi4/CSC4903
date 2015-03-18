@@ -33,11 +33,14 @@ class RenderManager
       void placeBrick(Ogre::SceneNode*,int*,int);
       void spawnRooms(Ogre::SceneNode*,int);
       
+
+      //These are needed for my implementation of the controller input. /$/
       void updateCamera();
-      void updateCamera(double[]);
-      void setControlStickInput(double[]);
+      void updateCamera(double*);
+      void setControlStickInput(double*);
       bool constantInput;
       double controllerStickInput[6];
+      //
 
       GameManager* game_manager;
       RenderListener* render_listener;
@@ -79,7 +82,7 @@ class RenderManager
       void keyReleased(std::string);
       void mouseMoved(uint32 mouse_x, uint32 mouse_y, int mouse_rel_x, int mouse_rel_y);
       void joystickAxisMoved(std::string axis, int amount);
-      void joystickAxisMoved(double amount[]);
+      void joystickAxisMoved(double*); //Needed for control stick constant input /$/
       void joystickButtonPressed(std::string);
 
       size_t getRenderWindowHandle();

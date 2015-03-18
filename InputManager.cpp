@@ -393,25 +393,20 @@ bool InputManager::axisMoved (const OIS::JoyStickEvent& e, int axis)
     //axis 4,3 = right stick
     //axis 2 = left trigger
     //axis 5 = right trigger
-
    
+    //After testing this on Dr. Boshart's machine, I found that depending upon your drivers
+    //the element in the e.state.mAxis[] array which corresponds to particular axis can vary,
+    //you may have to change this part in accordance with your drivers.
     double amount[6] = {e.state.mAxes[1].abs,e.state.mAxes[0].abs,  // left stick north/south, east/west
-		     e.state.mAxes[4].abs,e.state.mAxes[3].abs,  // right stick north/south, east/west
-		     e.state.mAxes[2].abs,e.state.mAxes[5].abs}; // left trigger and right trigger
+			e.state.mAxes[4].abs,e.state.mAxes[3].abs,  // right stick north/south, east/west
+			e.state.mAxes[2].abs,e.state.mAxes[5].abs}; // left trigger and right trigger
 
-    /* 
+    /*
     cout << amount[0] << " " << amount[1] << "\n" 
 	 << amount[2] << " " << amount[3] << "\n"
 	 << amount[4] << " " << amount[5] << endl;
     */
 
-    //dead zone guess
-    //if (abs(amount[axis]) < 10000) return true;
-    
-    //I added this bit which allows for multiple axis manipulations within a single frame
-    //however it does seem as though it will be a bit slow in the future so I'll have to work on it a bit
-    //but this is a temporary fix for now. 
-    
     //Notify each of the listeners
     ListArrayIterator<InputListener>* iter = input_listeners->iterator();
     while(iter->hasNext())
